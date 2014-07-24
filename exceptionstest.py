@@ -5,6 +5,40 @@ from exceptions import BaseException
 def throws():
 	    raise RuntimeError('this is the error message')
 
+def fun2(x):
+	print "---"
+	print x
+	print "---"
+	
+	if x == 5 or x == 8:
+		raise BaseException("Piatka lub Osemka")
+	try:   
+		#y = fun2(3)
+		try:
+			y = fun2(8)
+		except:
+			print x
+			print "Inner try"
+			raise
+                else:
+			val = 8
+			print 
+			print val
+			return val
+		finally:
+			print "Clenup inner"
+		
+	except:
+		print x
+		print "Outer try"
+		raise
+	else:
+		val = x + 5
+		print val 
+		return val
+	finally:
+		print "Cleanup"
+'''
 def fun(x):
 	print "---"
 	print x
@@ -37,11 +71,11 @@ def fun(x):
 		return val
 	finally:
 		print "Cleanup"
-
+'''
 def main():
 	print "++++++++++++++"
 	try:
-		fun(0)
+		fun2(0)
 	except:
 		print "END"
 
